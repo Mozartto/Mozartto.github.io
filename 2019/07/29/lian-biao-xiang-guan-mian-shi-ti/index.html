@@ -1,0 +1,2026 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="链表相关面试题, QiQi&#39;s blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>链表相关面试题 | QiQi&#39;s blog</title>
+    <link rel="icon" type="image/gif" href="/favicon.gif">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Mozartto/pictures/pictures20210209113521.png);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.gif" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">QiQi&#39;s blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.gif" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">QiQi&#39;s blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Mozartto" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Mozartto" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">链表相关面试题</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/computer/">
+                                <span class="chip bg-color">computer</span>
+                            </a>
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/data-structure/">
+                                <span class="chip bg-color">data structure</span>
+                            </a>
+                        
+                            <a href="/tags/algorithm/">
+                                <span class="chip bg-color">algorithm</span>
+                            </a>
+                        
+                            <a href="/tags/LinkedList/">
+                                <span class="chip bg-color">LinkedList</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/computer/" class="post-category">
+                                computer
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-07-29
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-01-12
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    15 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="链表相关面试题"><a href="#链表相关面试题" class="headerlink" title="链表相关面试题"></a>链表相关面试题</h2><p>了解完基础知识就可以开始刷题了，真正能让你进去的是刷题。</p>
+<p>想练手写代码，找个20道题练一下就行了。</p>
+<p><strong>链表问题</strong></p>
+<ol>
+<li>对于笔试，不用太在乎空间复杂度一切为了时间复杂度</li>
+<li>对于面试，时间复杂度依然放在第一位，但是一定要找到空间最省的方法</li>
+</ol>
+<p><strong>链表面试题常用的数据结构与技巧</strong></p>
+<ol>
+<li>使用容器（哈希表、数组等）</li>
+<li>快慢指针</li>
+</ol>
+<p><strong>快慢指针</strong></p>
+<ol>
+<li>输入链表头结点，奇数长度返回中点，偶数长度返回上中点(前面的那个中点)</li>
+<li>输入链表头结点，奇数长度返回中点，偶数长度返回下中点</li>
+<li>输入链表头结点，奇数长度返回中点的前一个结点，偶数长度返回上中点的前一个结点</li>
+<li>输入链表头结点，奇数长度返回中点的前一个结点，偶数长度返回下中点的前一个结点</li>
+</ol>
+<p>这四种情况边界条件是不一样的，你都得给它抠清楚</p>
+<p>返回上中点的代码：<a id="more"></a></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> Node <span class="token function">midOrUpMideNode</span><span class="token punctuation">(</span>Node head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> null <span class="token operator">||</span> head<span class="token punctuation">.</span>next <span class="token operator">==</span> null <span class="token operator">||</span> head<span class="token punctuation">.</span>next<span class="token punctuation">,</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//注意这个是短路或，前面不成立它才    会判断后面的，head.next是空，只有head一个点，直接返回这一个点，最后那个是前两个不为空，第三个为空，返回头结点（上中点）。前面卡一个过滤，有一个点、两个点、三个点的时候    </span>
+        <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//链表有三个点或三个以上的点</span>
+    Node slow <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span>       <span class="token comment" spellcheck="true">//慢指针来到第二个点</span>
+    Node fast <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//快指针来到第三个点</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>fast<span class="token punctuation">.</span>next <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> fast<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        slow <span class="token operator">=</span> slow<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        fast <span class="token operator">=</span> fast<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> slow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>返回下中点的代码：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> Node <span class="token function">midOrDownNode</span><span class="token punctuation">(</span>Node head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> null <span class="token operator">||</span> head<span class="token punctuation">.</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    Node slow <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    Node fast <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>fast<span class="token punctuation">.</span>next <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> fast<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        slow <span class="token operator">=</span> slow<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        fast <span class="token operator">=</span> fast<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> slow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>也可以直接把链表放在容器里面，然后直接取出size一半那个位置的元素（细节需要自己抠），这样简单，但是面试的时候最好写上面的。当然笔试的时候用容器，笔试的时候为了什么？就是为了ac（通过率），面试的时候再用上面的都可以。面试的时候可以装逼，当然，要明白一件事，你要是真吊的话就不是装逼了。</p>
+<p><strong>常见面试题</strong></p>
+<ol>
+<li><p>给定一个单链表head，请判断该链表是否为回文结构（回文，正着念和反着念一样）</p>
+<ol>
+<li>哈希表的方法特别简单（笔试用）</li>
+<li>改原链表的方法就需要注意边界了（面试用）</li>
+</ol>
+<p>这题比较憨，就不写代码了，想看的去leetcode上自己查</p>
+</li>
+<li><p>将单链表按照某值划分成左边小、中间相等、右边大的形式</p>
+<ol>
+<li>把链表放入数组里，在数组上做partition（笔试用）</li>
+<li>分成小、中、大三部分，再把各个部分之间串起来（面试用）（准备六个引用即可，还可以保证稳定性）</li>
+</ol>
+</li>
+</ol>
+<img src="C:\Users\xiaoqiyao\AppData\Roaming\Typora\typora-user-images\image-20201205154816881.png" alt="image-20201205154816881" style="zoom:40%;">
+
+<p>下面是第二种方法的代码（面试用的方法）</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> Node <span class="token function">listPartition</span><span class="token punctuation">(</span>Node head<span class="token punctuation">,</span> <span class="token keyword">int</span> pivot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Node sH <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    Node sT <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    Node eH <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    Node eT <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    Node mH <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    Node mT <span class="token operator">=</span> null<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//六个指针，小于、等于、大于区域的头和尾</span>
+    Node next <span class="token operator">=</span> null<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//save next node</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>head <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        next <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//把head后面的环境记一下，等会让要标空</span>
+        head<span class="token punctuation">.</span>next <span class="token operator">=</span> null<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//先让head指向空</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>head<span class="token punctuation">.</span>value <span class="token operator">&lt;</span> pivot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>sH <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//小于部分如果为空，当前结点即作头结点又作尾结点</span>
+                sH <span class="token operator">=</span> head<span class="token punctuation">;</span>  
+                sT <span class="token operator">=</span> head<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                sT<span class="token punctuation">.</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//先把尾巴的下一个结点指向当前结点，然后再让尾巴指向当前结点</span>
+                sT <span class="token operator">=</span> head<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>head<span class="token punctuation">.</span>value <span class="token operator">==</span> pivot<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//剩下的两种情况操作一模一样</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>eH <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    eH <span class="token operator">=</span> head<span class="token punctuation">;</span>
+                    eT <span class="token operator">=</span> head<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span><span class="token punctuation">{</span>
+                    eT<span class="token punctuation">.</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+                    eT <span class="token operator">=</span> head<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>mH <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    mH <span class="token operator">=</span> head<span class="token punctuation">;</span>
+                    mT <span class="token operator">=</span> head<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    mT<span class="token punctuation">.</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+                    mT <span class="token operator">=</span> head<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            head <span class="token operator">=</span> next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> 
+        <span class="token comment" spellcheck="true">//接下来，小于区域的尾巴，连等于区域的头，等于区域的尾巴，连大于区域的头，但是某个区域可能不存在，为了避免空指针异常，需要先判断区域是否存在</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>sT <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            sT<span class="token punctuation">.</span>next <span class="token operator">=</span> eH<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//等于区域为空也没事，因为小于区域尾巴本来就指向空</span>
+            eT <span class="token operator">=</span> eT <span class="token operator">==</span> null <span class="token operator">?</span> sT <span class="token operator">:</span> eT<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//如果等于区域为空的话，等于区域的尾巴变成小于区域的尾巴</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//上面的if不管中不中，下面都是eT去连大于区域的头</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>eT <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            eT<span class="token punctuation">.</span>next <span class="token operator">=</span> mH<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> sH <span class="token operator">!=</span> null <span class="token operator">?</span> sH <span class="token operator">:</span> <span class="token punctuation">(</span>eH <span class="token operator">!=</span> null <span class="token operator">?</span> eH <span class="token operator">:</span>mH<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//最后返回所有串起来的链表的最左侧的结点，牛啊</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>你没必要一开始就写出哎卧槽很牛的代码，没必要。你可以一开始写得很low，对于你来讲写出来一条一条之后再做优化都可以。</p>
+<ol start="3">
+<li><p>一种特殊的单链表结点类描述如下：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Node</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> value<span class="token punctuation">;</span>
+    Node next<span class="token punctuation">;</span>
+    Node rand<span class="token punctuation">;</span>
+    <span class="token function">Node</span><span class="token punctuation">(</span><span class="token keyword">int</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>value <span class="token operator">=</span> val<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>rand指针是单链表结点结构中新增的指针，rand可能指向链表中的任意一个结点，也可能指向null</p>
+<p>给定一个由Node结点类型组成的无环单链表的头结点head，请实现一个函数完成这个链表的复制，并返回复制的新链表的头结点</p>
+<p>【要求】</p>
+<p>时间复杂度为O(1)</p>
+<img src="https://cdn.jsdelivr.net/gh/Mozartto/pictures/Mozarttoimage-20201205154816881.png" style="zoom:40%;">
+
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> Node <span class="token function">copyListWithRand1</span><span class="token punctuation">(</span>Node head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    HashMap<span class="token operator">&lt;</span>Node<span class="token punctuation">,</span> Node<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>Node<span class="token punctuation">,</span> Node<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Node cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cur <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>cur<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">///先复制结点到map里去(在map中创造一个一模一样的链表)</span>
+    <span class="token punctuation">}</span>
+    cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cur <span class="token operator">!=</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//如果cur是老结点</span>
+        <span class="token comment" spellcheck="true">//那么map.get(cur)就是它克隆出来的新结点</span>
+        map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span><span class="token punctuation">.</span>next <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span><span class="token punctuation">.</span>rand <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>rand<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这两行就是克隆结点</span>
+        cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>下面来看一下不用哈希表的方法（为什么可以不用哈希表，因为可以人为构造对应关系）首先有一个链表，里面有123结点，把1’放在1后面2前面，2’和3’依次一样，然后遍历的时候一对一对地取出来（取一对和取一个没啥区别）</p>
+<p>（这就是你人为构造的哈希关系）然后复制rand指针。最后一步把大链表在next指针方向上分离出来。</p>
+<img src="https://cdn.jsdelivr.net/gh/Mozartto/pictures/Mozarttoimage-20201205165503934.png" alt="image-20201205165503934" style="zoom: 33%;">
+
+</li>
+</ol>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> Node <span class="token function">copyListWithRand2</span><span class="token punctuation">(</span>Node head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    Node cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    Node next <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//下面要把每一个copy出来的node给链接到原本的node后面和下一个node之前</span>
+    <span class="token comment" spellcheck="true">//1 -> 2</span>
+    <span class="token comment" spellcheck="true">//1 -> 1' -> 2</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cur <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//cur是老的链表</span>
+        next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        cur<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next <span class="token operator">=</span> next<span class="token punctuation">;</span>
+        cur <span class="token operator">=</span> next<span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">//这个while循环中的操作就是插入结点的操作</span>
+    <span class="token punctuation">}</span>
+    cur <span class="token operator">=</span> head<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//cur是老结点</span>
+    Node curCopy <span class="token operator">=</span> null<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//cur的克隆结点就叫curCopy</span>
+    <span class="token comment" spellcheck="true">//set copy node rand(随机指针)</span>
+    <span class="token comment" spellcheck="true">//1 -> 1' -> 2 -> 2'</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cur <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//cur 老</span>
+        <span class="token comment" spellcheck="true">//cur.next   新copy</span>
+        next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//next就是老结点的下一个(跳过中间插入的复制节点)</span>
+        curCopy <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        curCopy<span class="token punctuation">.</span>rand <span class="token operator">=</span> cur<span class="token punctuation">.</span>rand <span class="token operator">!=</span> null <span class="token operator">?</span> cur<span class="token punctuation">.</span>rand<span class="token punctuation">.</span>next <span class="token operator">:</span> null<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//如果原结点的rand指针为空，则curCopy的rand指针为空，否则让它被cur.rand指向</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//head.next 一定是新链表的头结点</span>
+    Node res <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    cur <span class="token operator">=</span> head<span class="token punctuation">;</span>    
+    <span class="token comment" spellcheck="true">//split(此时插入的链表已经复制完毕，要进行分离)</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cur <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        curCopy <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//让原链表的next指向原链表的下一个结点</span>
+        cur<span class="token punctuation">.</span>next <span class="token operator">=</span> next<span class="token punctuation">;</span>
+        curCopy<span class="token punctuation">.</span>next <span class="token operator">=</span> next <span class="token operator">!=</span> null <span class="token operator">?</span> next<span class="token punctuation">.</span>next <span class="token operator">:</span> null<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//复制结点也指向下一个复制的结点(如果不为空)</span>
+        cur <span class="token operator">=</span> next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 分完了之后返回我原来的头部(复制链表的头部)</span>
+    
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>下面要讲的这个题，和约瑟夫环问题，被认为是链表算法的两个噩梦</strong></p>
+<p><strong>给定两个可能有环也可能无环的单链表，头结点head1和head2。请实现一个函数，如果两个链表相交，请返回相交的第一个结点。如果不相交，返回null</strong></p>
+<p>【要求】</p>
+<p>如果两个链表长度之和为N，时间复杂度达到O(N)，额外空间复杂度为O(1)</p>
+<p>（我找了一下，这不是lc上的简单题吗…）（等会儿你就知道这个考虑得可比lc上那个easy题复杂多了…）</p>
+<ol>
+<li>先判断一个链表是否·为环，并返回它的结点<ol>
+<li>使用HashSet，从第一个结点开始将链表加入集合，如果到哪一个结点下面加不了了说明它是环点</li>
+<li>不用HashSet的方法。准备两个指针，快指针和慢指针</li>
+</ol>
+</li>
+</ol>
+<img src="https://cdn.jsdelivr.net/gh/Mozartto/pictures/Mozarttoimage-20201205193641115.png" alt="image-20201205193641115" style="zoom:50%;">
+
+<p>让快指针f走两步，慢指针s走一步，两个指针一定会在环上的某个点相遇，<strong>但怎么找到第一个入环的结点？接下来的操作就是一个玄学的地方了</strong></p>
+<p><strong>让f回到开头的结点，每次走一步，与s同步走，f与s相遇的第一个结点就是入环的第一个结点</strong></p>
+<img src="https://cdn.jsdelivr.net/gh/Mozartto/pictures/Mozarttoimage-20201205194059060.png" alt="image-20201205194059060" style="zoom:50%;">
+
+<p>直接记结论就行，有兴趣的话就去找找证明（小学奥赛的追击问题）</p>
+<p>下面看下code，先解决入环问题</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> Node <span class="token function">getLoopNode</span><span class="token punctuation">(</span>Node head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> null <span class="token operator">||</span> head<span class="token punctuation">.</span>next <span class="token operator">==</span> null <span class="token operator">||</span> head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//三种情况对应无结点、只有一个结点、只有两个结点</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//n1慢n2快</span>
+    Node n1 <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// n1 -> slow</span>
+    Node n2 <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//n2 -> fast</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>n1 <span class="token operator">!=</span> n2<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//它们相遇时从while中跳出</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n2<span class="token punctuation">.</span>next <span class="token operator">==</span> null <span class="token operator">||</span> n2<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        n2 <span class="token operator">=</span> n2<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        n1 <span class="token operator">=</span> n1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>n1 <span class="token operator">!=</span> n2<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//walk again from head 快指针从头开始一步一步走，慢指针在原来位置继续一步一步走</span>
+        n1 <span class="token operator">=</span> n1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        n2 <span class="token operator">=</span> n2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> n1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>接下来已经获得了两个链表的头结点和他们的第一个入环结点，要找第一个相交的结点。用HashSet的方法：把第一个链表放入HashSet中，然后遍历第二个链表，看第二个链表的结点是否在HashSet中，这个简单。</p>
+<p>不用HashSet的方法：从链表1开始走，走到最后一个结点，记录为end1，记录一下长度，设为length1；再遍历第二个链表，也是走到最好一个结点，记录为end2，记录下length2。先判断end1 == end2，如果不等于则必不相交，之前说过，如果相交，结尾的内存地址必是一样的。如果end1 == end2，你两只是相交的最后一个结点，我要找第一个结点，假设第一个链表长度是100，第二个链表长度是80，长链表先走20步，还剩80步时短链表开始走，一定会在第一个相交结点处相遇。</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//如果两个链表都无环，返回第一个相交结点，如果不相交，返回null</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> Node <span class="token function">noLoop</span><span class="token punctuation">(</span>Node head1<span class="token punctuation">,</span> Node head2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> null <span class="token operator">||</span> head2 <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    Node cur1 <span class="token operator">=</span> head1<span class="token punctuation">;</span>
+    Node cur2 <span class="token operator">=</span> head2<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>next <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        n<span class="token operator">++</span><span class="token punctuation">;</span>
+        cur1 <span class="token operator">=</span> cur1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//cur1经历完这个过程之后就变成了end1</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cur2<span class="token punctuation">.</span>next <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        n<span class="token operator">--</span><span class="token punctuation">;</span>
+        cur2 <span class="token operator">=</span> cur2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//cur2经历完这个过程之后就变成了end2</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>cur1 <span class="token operator">!=</span> cur2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//如果end1 != end2</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>end1 <span class="token operator">!=</span> end2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// n：链表1的长度减去链表2长度的值</span>
+    cur1 <span class="token operator">=</span> n <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> head1 <span class="token operator">:</span> head2<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//谁长，谁的头变成cur1</span>
+    cur2 <span class="token operator">=</span> cur1 <span class="token operator">==</span> head1 <span class="token operator">?</span> head2 <span class="token operator">:</span> head1<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//谁短，谁把头部给cur2</span>
+    
+    n <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        n<span class="token operator">--</span><span class="token punctuation">;</span>
+        cur1 <span class="token operator">=</span> cur1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//cur1先把差值的那些步给先走了</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cur1 <span class="token operator">!=</span> cur2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cur1 <span class="token operator">=</span> cur2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>  
+        cur2 <span class="token operator">=</span> cur2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//然后二者同时往前走</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> cur1<span class="token punctuation">;</span>
+    
+    <span class="token comment" spellcheck="true">//上面已经讨论了两个链表都无环的情况，下面还有三种情况，一个有环一个没环占两种情况，两个都有环占一种情况</span>
+    <span class="token comment" spellcheck="true">//一个有环一个没环的情况是不可能相交的，否则会破坏链表只有一个next指针的规则，要么就是前面重合，那就不是两条链表了，就是一条链表了</span>
+    <span class="token comment" spellcheck="true">//如果两个有环链表相交他们一定是共用环的，还要分两种情况：1.两个链表入环的结点是一个点；2.两个链表入环的结点不是一个点</span>
+    <span class="token comment" spellcheck="true">//第二种情况最好区分，如果你发现loop1的地址等于loop2的地址，那就是第二种情况。找这个相交结点也很好找，因为环你是不用看的，你只需要找第一个入环结点，当作最后结点即可，可以转换为上面的无环结点相交问题。你就找你的loop1和loop2，把它们当成公共尾结点即可</span>
+    <span class="token comment" spellcheck="true">//所以我们只需要区分第一种情况和第三种情况。如何区分？让loop1转一圈看看能不能遇到loop2，能遇到就是第三种情况，否则是第一种情况</span>
+    
+    <span class="token comment" spellcheck="true">//两个有环链表，返回第一个相交结点，如果不相交返回null</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Node <span class="token function">bothLoop</span><span class="token punctuation">(</span>Node head1<span class="token punctuation">,</span> Node loop1<span class="token punctuation">,</span> Node head2<span class="token punctuation">,</span> Node loop2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Node cur1 <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        Node cur2 <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>loop1 <span class="token operator">==</span> loop2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            cur1 <span class="token operator">=</span> head1<span class="token punctuation">;</span>
+            cur2 <span class="token operator">=</span> head2<span class="token punctuation">;</span>
+            <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//剩下的代码和上面的无环部分一模一样</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>cur1 <span class="token operator">!=</span> loop1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                n<span class="token operator">++</span><span class="token punctuation">;</span>
+                cur1 <span class="token operator">=</span> cur1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>cur2 <span class="token operator">!=</span> loop2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                n<span class="token operator">--</span><span class="token punctuation">;</span>
+                cur2 <span class="token operator">=</span> cur2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            cur1 <span class="token operator">=</span> n <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> head1 <span class="token operator">:</span> head2<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//谁长，谁的头变成cur1</span>
+            cur2 <span class="token operator">=</span> cur1 <span class="token operator">==</span> head1 <span class="token operator">?</span> head2 <span class="token operator">:</span> head1<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//谁短，谁把头部给cur2</span>
+            n <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                n<span class="token operator">--</span><span class="token punctuation">;</span>
+                cur1 <span class="token operator">=</span> cur1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>cur1 <span class="token operator">!=</span> cur2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cur1 <span class="token operator">=</span> cur1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+                cur2 <span class="token operator">=</span> cur2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> cur1<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//和上面的无环链表一模一样，就是第二种情况，二者的入环点相同，直接把入环点当成两个                                                                            链表的公共尾结点    </span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//else就是loop1 !=loop2的时候</span>
+            cur1 <span class="token operator">=</span> loop1<span class="token punctuation">.</span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//从loop1的下一个结点开始走</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>cur1 <span class="token operator">!=</span> loop1<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//如果它转回自己了，就会从while中跳出来</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>cur1 <span class="token operator">==</span> loop2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> loop1<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//如果遇到了，返回loop1和loop2都可以(都可以算是是相交的第一个结点)</span>
+                <span class="token punctuation">}</span>
+                cur1 <span class="token operator">=</span> cur1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> null<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//如果它转回自己都没遇到loop2，不相交</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//下面看调用这些功能方法的核心方法</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> Node <span class="token function">getIntersectNode</span><span class="token punctuation">(</span>Node head1<span class="token punctuation">,</span> Node head2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head1 <span class="token operator">==</span> null <span class="token operator">||</span> head2 <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    Node loop1 <span class="token operator">=</span> <span class="token function">getLoopNode</span><span class="token punctuation">(</span>head1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Node loop2 <span class="token operator">=</span> <span class="token function">getLoopNode</span><span class="token punctuation">(</span>head2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>loop1 <span class="token operator">==</span> null <span class="token operator">&amp;&amp;</span> loop2 <span class="token operator">==</span>null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">noLoop</span><span class="token punctuation">(</span>head1<span class="token punctuation">,</span> head2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>loop1 <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> loop2 <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">bothLoop</span><span class="token punctuation">(</span>head1<span class="token punctuation">,</span> loop1<span class="token punctuation">,</span> head2<span class="token punctuation">,</span> loop2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<img src="https://cdn.jsdelivr.net/gh/Mozartto/pictures/Mozarttoimage-20201205205111918.png" alt="image-20201205205111918" style="zoom: 50%;">
+
+<img src="https://cdn.jsdelivr.net/gh/Mozartto/pictures/Mozarttoimage-20201205224851424.png" alt="image-20201205224851424" style="zoom: 33%;">
+
+<p>约瑟夫环问题说实话比这个还要难一点，但这个已经比较难了。这个问题其实是三道面试题的一个合集。</p>
+<ol>
+<li>第一个面试题：给你一个链表，返回他第一个入环的结点。</li>
+<li>第二个面试题：两个无环链表相交，返回相交的结点</li>
+<li>第三个面试题：明确告诉你两个有环链表，怎么找到它们第一个相交的结点</li>
+</ol>
+<p>再看最后一个小题：</p>
+<p>能不能不给单链表的头结点，只给要被删除的结点，把这个结点给删掉。</p>
+<p>lc上的那个交换值的做法就是一个抖机灵的做法，会有很多种问题。如果你要删掉的是一个服务器呢？如果你删除的这个节点要调用析构函数呢？直接调不了。第三个问题，这种做法是绝对无法删除链表的最后一个结点的。null在系统中是一个单独的区域，你想删除最后一个结点，就必须把它前一个结点的指针手动指向空，你自己去掉强大的析构函数，屁用没有。</p>
+<img src="https://cdn.jsdelivr.net/gh/Mozartto/pictures/Mozarttoimage-20201205233031313.png" alt="image-20201205233031313" style="zoom:33%;">
+
+<p>注意，别把最后一个指针直接等于null，自己看下面的图。当你new一个Node的时候实际上是在内存中申请了一块新的内存空间，然后用a这个引用能找到它。你把c指向null，b.next照样能找到c原来所指的那一块内存空间。</p>
+<img src="https://cdn.jsdelivr.net/gh/Mozartto/pictures/Mozarttoimage-20201205233127726.png" alt="image-20201205233127726" style="zoom: 67%;">
+
+<img src="https://cdn.jsdelivr.net/gh/Mozartto/pictures/Mozarttoimage-20201205233202856.png" alt="image-20201205233202856" style="zoom: 50%;">
+
+<p>所以，刚才那道题，面试官提出来不是想让你抖机灵的。他就是考察你对内存的理解的。他就指望着你讲清楚选择的那种抖机灵的删除方式是不好的。你正儿八经地删除结点是一定要头结点的。所以，要告诉他，不行，有哪些问题。要删掉一个结点一定是要头结点的，而且一定要准确地连好指针。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">QiQi</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2019/07/29/lian-biao-xiang-guan-mian-shi-ti/">http://example.com/2019/07/29/lian-biao-xiang-guan-mian-shi-ti/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">QiQi</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/computer/">
+                                    <span class="chip bg-color">computer</span>
+                                </a>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/data-structure/">
+                                    <span class="chip bg-color">data structure</span>
+                                </a>
+                            
+                                <a href="/tags/algorithm/">
+                                    <span class="chip bg-color">algorithm</span>
+                                </a>
+                            
+                                <a href="/tags/LinkedList/">
+                                    <span class="chip bg-color">LinkedList</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">by me a coffee</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'YHbmAvIXwq0icLBhbk2adgdq-gzGzoHsz',
+        appKey: 'I0NzBKg3Gzr1iF950Uavimlc',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'en',
+        placeholder: 'comment it~ 评论请在此上方留下用户名和邮箱~ 邮箱信息不会公开显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2019/08/21/er-cha-shu-ji-ben-suan-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="二叉树基本算法">
+                        
+                        <span class="card-title">二叉树基本算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            二叉树基本算法二叉树，结构描述
+Class Node {
+    int value;
+    Node left;
+    Node right;
+}
+
+二叉树的先序、中序、后序遍历。这个是数据结构的基础概念，这里就不展开了。不会的可以查
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-08-21
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/computer/" class="post-category">
+                                    computer
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/computer/">
+                        <span class="chip bg-color">computer</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/data-structure/">
+                        <span class="chip bg-color">data structure</span>
+                    </a>
+                    
+                    <a href="/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
+                    </a>
+                    
+                    <a href="/tags/binary-tree/">
+                        <span class="chip bg-color">binary tree</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/07/22/lian-biao-jie-gou-zhan-dui-lie-di-gui-xing-wei-ha-xi-biao-he-you-xu-biao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/39.jpg" class="responsive-img" alt="链表结构、栈、队列、递归行为、哈希表和有序表">
+                        
+                        <span class="card-title">链表结构、栈、队列、递归行为、哈希表和有序表</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            链表结构、栈、队列、递归行为、哈希表和有序表因为大家都学过C，像反转链表这种水题其实不需要讲。但是由于考虑到部分读者可能没有学过Java的数据结构，所以先说一下Java中数据结构的定义，然后拿两道简单题来帮大家快速熟悉概念。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/computer/" class="post-category">
+                                    computer
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/computer/">
+                        <span class="chip bg-color">computer</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/data-structure/">
+                        <span class="chip bg-color">data structure</span>
+                    </a>
+                    
+                    <a href="/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
+                    </a>
+                    
+                    <a href="/tags/LinkedList/">
+                        <span class="chip bg-color">LinkedList</span>
+                    </a>
+                    
+                    <a href="/tags/recursion/">
+                        <span class="chip bg-color">recursion</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.4'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">QiQi</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">70.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "2";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Mozartto" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1220883974@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://www.facebook.com/qiqi.xiao.9469/" class="tooltipped" target="_blank" data-tooltip="关注我的Facebook: https://www.facebook.com/qiqi.xiao.9469/" data-position="top" data-delay="50">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+
+
+    <a href="https://twitter.com/Jerry21313800" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/Jerry21313800" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1220883974" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1220883974" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+	
+</footer>
+
+<div class="progress-bar"></div>
+
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
