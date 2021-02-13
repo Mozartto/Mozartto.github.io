@@ -413,7 +413,7 @@
 
 
             <div class="cover-btns">
-                <a href="#articles" class="waves-effect waves-light btn">
+                <a href="#indexCard" class="waves-effect waves-light btn">
                     <i class="fa fa-angle-double-down"></i>Start
                 </a>
 
@@ -608,6 +608,42 @@
                     
 
                     
+
+                    
+                        <link rel="stylesheet" href="/libs/dplayer/DPlayer.min.css">
+<div class="video-player">
+    
+    <div class="title center-align">
+        <i class="fas fa-video-camera"></i>&nbsp;&nbsp;Short Nordic Landscape Photography 北欧风光摄影短片(这个视频是我特别喜欢的一个b站up主拍的:公路旅人Fox)
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="dplayer" class="dplayer-video"
+                    ></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/dplayer/DPlayer.min.js"></script>
+<script>
+    $(function () {
+        new DPlayer({
+            container: document.getElementById('dplayer'),
+            autoplay: 'false' === 'true',
+            theme: '#42b983',
+            loop: 'false' === 'true',
+            lang: 'en' === 'zh-CN' ? 'zh-cn' : 'en',
+            preload: 'auto',
+            volume: Number('0.7'),
+            video: {
+                url: 'https://upos-sz-mirrorkodo.bilivideo.com/upgcxcode/85/62/196816285/196816285-1-208.mp4?e=ig8euxZM2rNcNbKV7wdVhwdl7wdMhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1613193991&gen=playurl&os=kodobv&oi=978800370&trid=0111c7522cd449c0a5f9b9efd0991e2eT&platform=html5&upsig=04401b9caa6ba87e7d554ee627b30f30&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&mid=524602686&orderid=0,1&logo=80000000',
+                pic: 'https://cdn.jsdelivr.net/gh/Mozartto/pictures/pictures20210213114107.png',
+                thumbnails: ''
+            }
+        });
+    });
+</script>
 
                     
 
@@ -837,27 +873,21 @@ erro有两个来源，一个是bias(偏移量，就是函数中的b)；一个是
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/10/20/ji-qi-xue-xi-bi-ji-2/">
+                    <a href="/2020/10/20/ji-qi-xue-xi-bi-ji-1/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="机器学习Note2">
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="机器学习Note1">
                             
-                            <span class="card-title">机器学习Note2</span>
+                            <span class="card-title">机器学习Note1</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                机器学习——Note2   regression： case study
-regression的应用
-
-
-example application：精灵宝可梦
-
-
-列出了我们预测的function之后，还要定义loss function来判断
+                                机器学习——Note1：基本概念
+前几天看了一下爱奇艺的推荐系统那个项目，发现还是得补一下ML，虽然说以后不搞这个(太累了，而且以后大概率炼丹)。不过做开发的了解一下ML知识也不错。目前在自学ML。公众号/博客上的文章是我的ML学习笔记，这
                             
                         </div>
                         <div class="publish-info">
@@ -895,21 +925,27 @@ example application：精灵宝可梦
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/10/20/ji-qi-xue-xi-bi-ji-1/">
+                    <a href="/2020/10/20/ji-qi-xue-xi-bi-ji-2/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="机器学习Note1">
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="机器学习Note2">
                             
-                            <span class="card-title">机器学习Note1</span>
+                            <span class="card-title">机器学习Note2</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                机器学习——Note1：基本概念
-前几天看了一下爱奇艺的推荐系统那个项目，发现还是得补一下ML，虽然说以后不搞这个(太累了，而且以后大概率炼丹)。不过做开发的了解一下ML知识也不错。目前在自学ML。公众号/博客上的文章是我的ML学习笔记，这
+                                机器学习——Note2   regression： case study
+regression的应用
+
+
+example application：精灵宝可梦
+
+
+列出了我们预测的function之后，还要定义loss function来判断
                             
                         </div>
                         <div class="publish-info">
@@ -1714,7 +1750,7 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-epsilon2_1"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
 <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
